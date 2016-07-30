@@ -7,11 +7,22 @@ using System.Collections;
 public class DependSceneLoader : MonoBehaviour
 {
     public string sceneName;
+    public bool initalDeactive = false;
 
     void Awake ()
     {
         if (!SceneManager.GetSceneByName (sceneName).IsValid()) {
             SceneManager.LoadScene (sceneName, LoadSceneMode.Additive);
+        }
+    }
+
+    void Start ()
+    {
+        if (initalDeactive) {
+            Scene gameScene = SceneManager.GetSceneByName (sceneName);
+            foreach (var groot in gameScene.GetRootGameObjects ()) {
+                groot.SetActive (false);
+            }
         }
     }
 }

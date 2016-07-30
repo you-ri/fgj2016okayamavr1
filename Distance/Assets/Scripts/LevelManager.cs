@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
-
-
+public class LevelManager : MonoBehaviour
+{
     public PlayerController player;
 
     public FallingObject iwa;
 
     float nextSpawnTime_;
+    bool gaming = false;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         player = FindObjectOfType<PlayerController> ();
+        gaming = true;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         nextSpawnTime_ -= Time.deltaTime;
         if (nextSpawnTime_ <= 0) {
             FallingObject iwao = Instantiate (iwa, player.transform.position + Vector3.up * -500, Quaternion.identity) as FallingObject;
@@ -29,5 +32,21 @@ public class LevelManager : MonoBehaviour {
             nextSpawnTime_ = 1;
         }
 
+        if (player.transform.position.y <= 2 && gaming == true) {
+            EndGame ();
+        }
 	}
+
+    void EndGame ()
+    {
+        StartCoroutine ("DoResultCheck");
+        gaming = false;
+    }
+
+    // 着地から一定時間でタイトルに戻る
+    IEnumerator DoResultCheck ()
+    {
+        yield return new WaitForSeconds (10f);
+        SceneManager.LoadScene ("Title", LoadSceneMode.Single);
+    }
 }

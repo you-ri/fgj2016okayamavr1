@@ -4,30 +4,39 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour {
 
-    public bool isIdling = true;
+    public bool isStarting = false;
     public PlayerController player;
 
+    void Awake ()
+    {
+        if (!SceneManager.GetSceneByName ("Game").IsValid ()) {
+            SceneManager.LoadScene ("Game", LoadSceneMode.Additive);
+        }
+    }
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         player = FindObjectOfType<PlayerController> ();
-        isIdling = true;
-
+        isStarting = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         // 下を向くとゲームスタート
-        if (player.head.forward.y <= -0.8f && isIdling) {
+        if (player.head.forward.y <= -0.8f && !isStarting) {
             StartGame ();
-
         }
 	}
 
     void StartGame ()
     {
-        SceneManager.LoadScene ("Game", LoadSceneMode.Additive);
-        isIdling = false;
+        Scene gameScene = SceneManager.GetSceneByName ("Game");
+            foreach (var groot in gameScene.GetRootGameObjects ()) {
+            groot.SetActive (true);
+        }
+
+        isStarting = true;
     }
 }
