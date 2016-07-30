@@ -10,8 +10,8 @@ public class LevelManager : MonoBehaviour {
 
     float nextSpawnTime_;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = FindObjectOfType<PlayerController> ();
 	}
 	

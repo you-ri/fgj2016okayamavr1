@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public TextMesh scoreText;
     public GameObject captureingSight;
     public float maxVelocityY = 150;
-
+    public Transform head;
 
     public FallingObject targetting;
     float targettingTime_ = 0;
@@ -36,18 +36,19 @@ public class PlayerController : MonoBehaviour
         RaycastHit hitInfo;
 
         if (Physics.Raycast (new Ray (transform.position, transform.forward), out hitInfo, 1 << 9)) {
+            if (hitInfo.rigidbody != null) {
+                FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
+                if (fo != targetting && targetting == null) {
+                    EndCapture ();
+                }
+                if (fo != targetting && targetting != null) {
+                    targettingTime_ = 0;
+                    StartCapture (fo);
+                }
 
-            FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
-            if (fo != targetting && targetting == null) {
-                EndCapture ();
+                print (fo);
+                targetting = fo;
             }
-            if (fo != targetting && targetting != null) {
-                targettingTime_ = 0;
-                StartCapture (fo);
-            }
-
-            print (fo);
-            targetting = fo;
         }
         if (targetting != null) {
             targettingTime_ += Time.deltaTime;
@@ -62,10 +63,10 @@ public class PlayerController : MonoBehaviour
             foundedObjects_.Add (targetting);
         }
 
+        // 最大速度を設定
         if (rigidbody_.velocity.y < -maxVelocityY) {
             rigidbody_.velocity = new Vector3 (0, -maxVelocityY, 0);
         }
-        print (rigidbody_.velocity.y);
     }
 
     GameObject sight_;
