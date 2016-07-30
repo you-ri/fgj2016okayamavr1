@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public TextMesh distanceText;
     public TextMesh scoreText;
     public GameObject captureingSight;
+    public float maxVelocityY = 150;
 
 
     public FallingObject targetting;
@@ -20,12 +21,12 @@ public class PlayerController : MonoBehaviour
     public int score;
 
     HashSet<FallingObject> foundedObjects_ = new HashSet<FallingObject> ();
-
+    Rigidbody rigidbody_;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        rigidbody_ = GetComponent<Rigidbody> ();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -33,7 +34,9 @@ public class PlayerController : MonoBehaviour
         distanceText.text = "Distance:" + transform.position.y + "m";
         scoreText.text = "Score:" + score;
         RaycastHit hitInfo;
-        if (Physics.Raycast (new Ray (transform.position, transform.forward), out hitInfo)) {
+
+        if (Physics.Raycast (new Ray (transform.position, transform.forward), out hitInfo, 1 << 9)) {
+
             FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
             if (fo != targetting && targetting == null) {
                 EndCapture ();
@@ -50,7 +53,7 @@ public class PlayerController : MonoBehaviour
             targettingTime_ += Time.deltaTime;
         }
 
-        if (targettingTime_ > 2 && targetting != null) {
+        if (targettingTime_ > 1 && targetting != null) {
             //targetting.GetComponent<Collider> ().enabled = false;
             //print ("founded " + targetting +  "  score:" + targetting.score);
             score += targetting.score;
@@ -58,6 +61,11 @@ public class PlayerController : MonoBehaviour
             targettingTime_ = 0;
             foundedObjects_.Add (targetting);
         }
+
+        if (rigidbody_.velocity.y < -maxVelocityY) {
+            rigidbody_.velocity = new Vector3 (0, -maxVelocityY, 0);
+        }
+        print (rigidbody_.velocity.y);
     }
 
     GameObject sight_;

@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fighter_mqo.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 461174}
   - 33: {fileID: 3306030}
   - 23: {fileID: 2318586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wing_rig.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fighter_mqo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - 4: {fileID: 405728}
   - 33: {fileID: 3348222}
   - 23: {fileID: 2306314}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wing_lef.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 4: {fileID: 415768}
   - 33: {fileID: 3349868}
   - 23: {fileID: 2382286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: neck.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - 4: {fileID: 466818}
   - 33: {fileID: 3395964}
   - 23: {fileID: 2378746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: body.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,8 @@ GameObject:
   - 114: {fileID: 11469488}
   - 135: {fileID: 13509768}
   - 75: {fileID: 7594346}
-  m_Layer: 0
+  - 114: {fileID: 11486656}
+  m_Layer: 9
   m_Name: fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +171,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +188,7 @@ GameObject:
   - 4: {fileID: 453450}
   - 33: {fileID: 3355778}
   - 23: {fileID: 2372016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: engin_rig.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +203,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +218,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fighter_mqo.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20003.7, z: 9.31}
+  m_LocalPosition: {x: 0, y: 10000, z: 9.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -613,7 +614,7 @@ ConstantForce:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188330}
   m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 10}
+  m_Force: {x: 0, y: 1, z: 10}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -629,6 +630,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 100
+--- !u!114 &11486656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c30fe0f56d4a547a7319daee10feb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 20
 --- !u!135 &13509768
 SphereCollider:
   m_ObjectHideFlags: 1
