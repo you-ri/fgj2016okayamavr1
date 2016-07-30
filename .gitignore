@@ -1,0 +1,44 @@
+# =============== #
+# Unity generated #
+# =============== #
+Distance/Temp/
+Distance/Obj/
+Distance/UnityGenerated/
+Distance/Library/
+Distance/Bin/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+Distance/ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ============ #
+# for others   #
+# ============ #
+*.log
+log.txt
+*.pyc
+*.sublime-workspace
+openh264-1.5.0-win64msvc.dll
