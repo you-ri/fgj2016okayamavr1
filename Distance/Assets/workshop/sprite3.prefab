@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414464}
   - 212: {fileID: 21249076}
-  - 95: {fileID: 9598314}
+  - 95: {fileID: 9554698}
   m_Layer: 0
   m_Name: sprite3
   m_TagString: Untagged
@@ -120,7 +120,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 414464}
   m_RootOrder: 2
---- !u!95 &9598314
+--- !u!95 &9554698
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -129,7 +129,7 @@ Animator:
   m_GameObject: {fileID: 147710}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab64c9f592c2641bb9563bc3d575b942, type: 2}
+  m_Controller: {fileID: 9100000, guid: d81bba88c8e684ff081f15df7548a4d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
