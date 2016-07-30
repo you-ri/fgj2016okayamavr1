@@ -1,48 +1,47 @@
 fileFormatVersion: 2
-guid: 9e1a4af0a7403554fb35a4f84364b2b2
-timeCreated: 1469857118
+guid: a21d0d20b20c844459204856c35df2f3
+timeCreated: 1469863600
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: body
+    100000: body.002
     100002: Camera
-    100004: engin_lef
-    100006: engin_rig
-    100008: //RootNode
-    100010: fighter_mqo
-    100012: Lamp
-    100014: neck
-    100016: wing_lef
-    100018: wing_rig
-    400000: body
+    100004: engin_rig.002
+    100006: //RootNode
+    100008: fighter_mqo
+    100010: fighter_mqo.001
+    100012: fighter_mqo.002
+    100014: Lamp
+    100016: neck.002
+    100018: wing_lef.002
+    100020: wing_rig.002
+    400000: body.002
     400002: Camera
-    400004: engin_lef
-    400006: engin_rig
-    400008: //RootNode
-    400010: fighter_mqo
-    400012: Lamp
-    400014: neck
-    400016: wing_lef
-    400018: wing_rig
-    2300000: body
-    2300002: engin_lef
-    2300004: engin_rig
-    2300006: neck
-    2300008: wing_lef
-    2300010: wing_rig
-    3300000: body
-    3300002: engin_lef
-    3300004: engin_rig
-    3300006: neck
-    3300008: wing_lef
-    3300010: wing_rig
-    4300000: wing_rig
-    4300002: wing_lef
-    4300004: neck
-    4300006: engin_lef
-    4300008: engin_rig
-    4300010: body
+    400004: engin_rig.002
+    400006: //RootNode
+    400008: fighter_mqo
+    400010: fighter_mqo.001
+    400012: fighter_mqo.002
+    400014: Lamp
+    400016: neck.002
+    400018: wing_lef.002
+    400020: wing_rig.002
+    2300000: body.002
+    2300002: engin_rig.002
+    2300004: neck.002
+    2300006: wing_lef.002
+    2300008: wing_rig.002
+    3300000: body.002
+    3300002: engin_rig.002
+    3300004: neck.002
+    3300006: wing_lef.002
+    3300008: wing_rig.002
+    4300000: wing_rig.002
+    4300002: wing_lef.002
+    4300004: neck.002
+    4300006: engin_rig.002
+    4300008: body.002
   materials:
     importMaterials: 1
     materialName: 0
