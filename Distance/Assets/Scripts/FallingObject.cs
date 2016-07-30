@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
-{
-    public TextMesh text;
+public class FallingObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +10,6 @@ public class PlayerController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = "Distance:" + transform.position.y + "m";
+	
 	}
 }
