@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FallingObject : MonoBehaviour {
 
+    public int score;
+
 	// Use this for initialization
 	void Start () {
 	
