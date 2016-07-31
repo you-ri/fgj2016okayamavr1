@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public TextMesh distanceText;
     public TextMesh scoreText;
     public GameObject captureingSight;
+    public GameObject lockOn;
     public float maxVelocityY = 150;
     public Transform head;
     public float lockOnTime = 0.5f;
@@ -25,13 +26,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody rigidbody_;
     LevelManager levelManager_;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rigidbody_ = GetComponent<Rigidbody> ();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         distanceText.text = "Distance:" + transform.position.y + "m";
         scoreText.text = "Score:" + score;
@@ -107,6 +108,8 @@ public class PlayerController : MonoBehaviour
         sight_.transform.localScale = new Vector3 (10, 10, 10);
 
         foundedObjects_.Add (fo);
+
+        Instantiate (this.lockOn, fo.transform.position, fo.transform.rotation);
     }
 
 
