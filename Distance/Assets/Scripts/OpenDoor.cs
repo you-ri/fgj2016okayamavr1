@@ -17,7 +17,7 @@ public class OpenDoor : MonoBehaviour {
 	void Update () {
 		//スタート画面の演出、扉の開閉
 		//本来はレイキャストで処理するが、テストのためにSpaceキーによる処理
-		if (title.isStarting && count < 1.7f) {
+		if (title.isStarting) {
 			transform.Rotate (new Vector3 (0, 0, z));
 			z += Time.deltaTime * code;
 			count += Time.deltaTime * 1f;

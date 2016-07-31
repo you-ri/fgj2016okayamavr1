@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
             nextSpawnTime_ = 1;
         }
 
-        if (player.transform.position.y <= 2 && gaming == true) {
+        if (player.transform.position.y <= 10 && gaming == true) {
             EndGame ();
         }
 	}
