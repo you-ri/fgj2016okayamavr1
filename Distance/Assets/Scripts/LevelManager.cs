@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine ("DoResultCheck");
         gaming = false;
+        FindObjectOfType<score_script> ().SetScore(FindObjectOfType<PlayerController> ().score);
     }
 
     // 着地から一定時間でタイトルに戻る

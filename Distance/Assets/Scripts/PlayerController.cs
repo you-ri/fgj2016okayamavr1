@@ -38,17 +38,13 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast( head.position, head.forward, out hitInfo, 500.0f, 1 << 9)) {
             if (hitInfo.rigidbody != null) {
-                print (hitInfo.collider);
                 FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
                 if (fo != targetting && fo == null) {
                     EndCapture ();
                 }
                 if (fo != targetting && fo != null) {
-                    targettingTime_ = 0;
                     StartCapture (fo);
                 }
-
-                targetting = fo;
             }
         }
         if (targetting != null) {
@@ -56,12 +52,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if (targettingTime_ > lockOnTime && targetting != null) {
+            AddCaptured (targetting);
             //targetting.GetComponent<Collider> ().enabled = false;
             //print ("founded " + targetting +  "  score:" + targetting.score);
-            score += targetting.score;
             targetting = null;
             targettingTime_ = 0;
-            foundedObjects_.Add (targetting);
         }
 
         // 最大速度を設定
@@ -79,11 +74,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         targetting = target;
-
-        sight_ = Instantiate (this.captureingSight, targetting.transform.position, targetting.transform.rotation) as GameObject;
-        sight_.transform.parent = targetting.transform;
-        sight_.transform.localScale = new Vector3( 10, 10, 10);
-
+        targettingTime_ = 0;
     }
 
     void EndCapture ()
@@ -93,6 +84,20 @@ public class PlayerController : MonoBehaviour
             //Destroy (sight_);
             sight_ = null;
         }
+    }
+
+    void AddCaptured (FallingObject fo)
+    {
+        if (foundedObjects_.Contains (fo)) return;
+
+        score += fo.score;
+
+        print ("captred");
+        sight_ = Instantiate (this.captureingSight, fo.transform.position, fo.transform.rotation) as GameObject;
+        sight_.transform.parent = fo.transform;
+        sight_.transform.localScale = new Vector3 (10, 10, 10);
+
+        foundedObjects_.Add (fo);
     }
 
 
