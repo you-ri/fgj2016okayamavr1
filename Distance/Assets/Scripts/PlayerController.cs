@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject captureingSight;
     public float maxVelocityY = 150;
     public Transform head;
+    public float lockOnTime = 0.5f;
 
     public FallingObject targetting;
     float targettingTime_ = 0;
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
             targettingTime_ += Time.deltaTime;
         }
 
-        if (targettingTime_ > 1 && targetting != null) {
+        if (targettingTime_ > lockOnTime && targetting != null) {
             //targetting.GetComponent<Collider> ().enabled = false;
             //print ("founded " + targetting +  "  score:" + targetting.score);
             score += targetting.score;
