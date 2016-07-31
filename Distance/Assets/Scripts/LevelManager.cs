@@ -42,12 +42,13 @@ public class LevelManager : MonoBehaviour
         StartCoroutine ("DoResultCheck");
         gaming = false;
         FindObjectOfType<score_script> ().SetScore(FindObjectOfType<PlayerController> ().score);
+        FindObjectOfType<PlayerController> ().EndGame ();
     }
 
     // 着地から一定時間でタイトルに戻る
     IEnumerator DoResultCheck ()
     {
-        yield return new WaitForSeconds (10f);
+        yield return new WaitForSeconds (15f);
         SceneManager.LoadScene ("Title", LoadSceneMode.Single);
     }
 }

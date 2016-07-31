@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public TextMesh scoreText;
     public GameObject captureingSight;
     public GameObject lockOn;
+    public GameObject speedLine;
     public float maxVelocityY = 150;
     public Transform head;
     public float lockOnTime = 0.5f;
@@ -112,5 +113,9 @@ public class PlayerController : MonoBehaviour
         Instantiate (this.lockOn, fo.transform.position, fo.transform.rotation);
     }
 
+    public void EndGame ()
+    {
+        Destroy (speedLine);
+    }
 
 }
