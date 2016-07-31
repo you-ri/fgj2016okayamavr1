@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     HashSet<FallingObject> foundedObjects_ = new HashSet<FallingObject> ();
     Rigidbody rigidbody_;
+    LevelManager levelManager_;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,14 @@ public class PlayerController : MonoBehaviour
     {
         distanceText.text = "Distance:" + transform.position.y + "m";
         scoreText.text = "Score:" + score;
+
+        if (levelManager_ == null) {
+            levelManager_ = FindObjectOfType<LevelManager> ();
+        }
+        if (levelManager_ != null && levelManager_.gaming == false) {
+            return;
+        }
+
         RaycastHit hitInfo;
 
         if (Physics.Raycast( head.position, head.forward, out hitInfo, 500.0f, 1 << 9)) {

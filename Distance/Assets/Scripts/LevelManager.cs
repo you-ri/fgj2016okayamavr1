@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public FallingObject iwa;
 
     float nextSpawnTime_;
-    bool gaming = false;
+    public bool gaming = false;
 
     // Use this for initialization
     void Start ()
