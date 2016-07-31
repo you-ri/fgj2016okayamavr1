@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start () {
         rigidbody_ = GetComponent<Rigidbody> ();
+        distanceText.gameObject.SetActive (false);
+        scoreText.gameObject.SetActive (false);
     }
 
     // Update is called once per frame
@@ -113,8 +115,16 @@ public class PlayerController : MonoBehaviour
         Instantiate (this.lockOn, fo.transform.position, fo.transform.rotation);
     }
 
+    public void StartGame ()
+    {
+        distanceText.gameObject.SetActive (true);
+        scoreText.gameObject.SetActive (true);
+    }
+
     public void EndGame ()
     {
+        distanceText.gameObject.SetActive (false);
+        scoreText.gameObject.SetActive (false);
         Destroy (speedLine);
     }
 

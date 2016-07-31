@@ -45,5 +45,7 @@ public class TitleManager : MonoBehaviour {
             }
         }
         isStarting = true;
+
+        FindObjectOfType<PlayerController> ().StartGame ();
     }
 }
