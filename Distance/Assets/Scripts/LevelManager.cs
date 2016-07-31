@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
             float addforcex = Mathf.Sin (rad) * distance;
             float addforcey = Mathf.Cos (rad) * distance;
             iwao.transform.position = iwao.transform.position + new Vector3 (addforcex, 0f, addforcey);
-            nextSpawnTime_ = 1;
+            nextSpawnTime_ = 0.7f;
         }
 
         if (player.transform.position.y <= 10 && gaming == true) {

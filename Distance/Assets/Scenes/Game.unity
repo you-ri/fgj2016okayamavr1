@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  iwa: {fileID: 1316106654}
+  iwa: {fileID: 11462082, guid: 1ba3276c14bae8b429f839a4692edf8c, type: 2}
   gaming: 0
 --- !u!4 &543582894
 Transform:
@@ -1002,12 +1002,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ba3276c14bae8b429f839a4692edf8c, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1316106654 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11462082, guid: 1ba3276c14bae8b429f839a4692edf8c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1316106652}
-  m_Script: {fileID: 11500000, guid: 75399a5f3d930e14dbdbb0e892ad64c1, type: 3}
 --- !u!1001 &1318987708
 Prefab:
   m_ObjectHideFlags: 0

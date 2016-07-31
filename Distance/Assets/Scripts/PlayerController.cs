@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         RaycastHit hitInfo;
 
-        if (Physics.Raycast( head.position, head.forward, out hitInfo, 500.0f, 1 << 9)) {
+        if (Physics.Raycast( head.position, head.forward, out hitInfo, 400.0f, 1 << 9)) {
             if (hitInfo.rigidbody != null) {
                 FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
                 if (fo != targetting && fo == null) {
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         score += fo.score;
 
-        print ("captred");
+        print ("captred " + fo.name);
         sight_ = Instantiate (this.captureingSight, fo.transform.position, fo.transform.rotation) as GameObject;
         sight_.transform.parent = fo.transform;
         sight_.transform.localScale = new Vector3 (10, 10, 10);

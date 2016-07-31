@@ -1876,7 +1876,7 @@ MonoBehaviour:
   scoreText: {fileID: 2087837525}
   captureingSight: {fileID: 116974, guid: 91238ffe911b0154a84eda8b961dcf8b, type: 2}
   lockOn: {fileID: 143436, guid: 7afa3cbf8874f2543ae881bed3cc90e9, type: 2}
-  speedLine: {fileID: 0}
+  speedLine: {fileID: 1454731525}
   maxVelocityY: 150
   head: {fileID: 1458525698}
   lockOnTime: 0.5
