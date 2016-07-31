@@ -398,6 +398,7 @@ GameObject:
   - 4: {fileID: 860198567}
   - 114: {fileID: 860198568}
   - 114: {fileID: 860198570}
+  - 114: {fileID: 860198571}
   - 114: {fileID: 860198569}
   m_Layer: 0
   m_Name: TitleManager
@@ -457,6 +458,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Game
+  initalDeactive: 1
+--- !u!114 &860198571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860198566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b118427aa050c4e9f1c8399e074358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Level1
   initalDeactive: 1
 --- !u!1 &1134487484
 GameObject:

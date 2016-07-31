@@ -36,18 +36,18 @@ public class PlayerController : MonoBehaviour
         scoreText.text = "Score:" + score;
         RaycastHit hitInfo;
 
-        if (Physics.Raycast (new Ray (transform.position, transform.forward), out hitInfo, 1 << 9)) {
+        if (Physics.Raycast( head.position, head.forward, out hitInfo, 500.0f, 1 << 9)) {
             if (hitInfo.rigidbody != null) {
+                print (hitInfo.collider);
                 FallingObject fo = hitInfo.rigidbody.gameObject.GetComponent<FallingObject> ();
-                if (fo != targetting && targetting == null) {
+                if (fo != targetting && fo == null) {
                     EndCapture ();
                 }
-                if (fo != targetting && targetting != null) {
+                if (fo != targetting && fo != null) {
                     targettingTime_ = 0;
                     StartCapture (fo);
                 }
 
-                print (fo);
                 targetting = fo;
             }
         }
@@ -74,9 +74,13 @@ public class PlayerController : MonoBehaviour
 
     void StartCapture (FallingObject target)
     {
+        if (target == null) {
+            EndCapture ();
+            return;
+        }
         targetting = target;
 
-        sight_ = Instantiate (this.captureingSight, target.transform.position, target.transform.rotation) as GameObject;
+        sight_ = Instantiate (this.captureingSight, targetting.transform.position, targetting.transform.rotation) as GameObject;
         sight_.transform.parent = targetting.transform;
         sight_.transform.localScale = new Vector3( 10, 10, 10);
 
@@ -86,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         targetting = null;
         if (sight_ != null) {
-            Destroy (sight_);
+            //Destroy (sight_);
             sight_ = null;
         }
     }

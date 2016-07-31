@@ -32,11 +32,18 @@ public class TitleManager : MonoBehaviour {
 
     void StartGame ()
     {
-        Scene gameScene = SceneManager.GetSceneByName ("Game");
+        {
+            Scene gameScene = SceneManager.GetSceneByName ("Game");
             foreach (var groot in gameScene.GetRootGameObjects ()) {
-            groot.SetActive (true);
+                groot.SetActive (true);
+            }
         }
-
+        {
+            Scene gameScene = SceneManager.GetSceneByName ("Level1");
+            foreach (var groot in gameScene.GetRootGameObjects ()) {
+                groot.SetActive (true);
+            }
+        }
         isStarting = true;
     }
 }

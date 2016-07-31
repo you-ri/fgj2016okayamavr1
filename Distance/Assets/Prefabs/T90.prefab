@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: T90_mqo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - 4: {fileID: 426068}
   - 33: {fileID: 3329656}
   - 23: {fileID: 2335144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sennsya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cushion_mqo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - 54: {fileID: 5422732}
   - 65: {fileID: 6577616}
   - 114: {fileID: 11437730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: T90
   m_TagString: Untagged
   m_Icon: {fileID: 0}

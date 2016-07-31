@@ -15,11 +15,11 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 1
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.36332178, g: 0.69584864, b: 0.88235295, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 200
-  m_LinearFogEnd: 500
+  m_LinearFogStart: 100
+  m_LinearFogEnd: 2000
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -972,11 +972,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e1e8d76e976009749af074752252444f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.002
+      value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e1e8d76e976009749af074752252444f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.002
+      value: 0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: e1e8d76e976009749af074752252444f, type: 3}
       propertyPath: m_StaticEditorFlags
